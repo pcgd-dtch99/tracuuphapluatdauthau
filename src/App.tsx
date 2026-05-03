@@ -154,13 +154,76 @@ function DocumentPane({
 
   const renderContent = (text: string, articleId: string) => {
     const artNotes = userNotes.filter(n => n.articleId === articleId);
+    const formulaText = `n\n\nTỷ lệ sở hữu vốn =   ∑  Xi x Yi\n\ni=1`;
+    const formulaDiemTongHop = '{{FORMULA_DIEM_TONG_HOP}}';
+    const formulaDiemGia = '{{FORMULA_DIEM_GIA}}';
 
-    if (artNotes.length === 0 && !deferredSearchQuery.trim()) {
+    if (artNotes.length === 0 && !deferredSearchQuery.trim() && !text.includes(formulaText) && !text.includes(formulaDiemTongHop) && !text.includes(formulaDiemGia)) {
       return <span data-article-id={articleId}>{text}</span>;
     }
 
-    type Token = { type: 'text' | 'note' | 'search', extText: string, note?: UserNote };
+    type Token = { type: 'text' | 'note' | 'search' | 'formula' | 'formula_diem_tong_hop' | 'formula_diem_gia' | 'var_subscript', extText: string, note?: UserNote, prefix?: string, sub?: string };
     let tokens: Token[] = [{ type: 'text', extText: text }];
+
+    // Handle formula
+    if (text.includes(formulaText)) {
+      tokens = tokens.flatMap(el => {
+        if (el.type !== 'text') return el;
+        const parts = el.extText.split(formulaText);
+        const newTokens: Token[] = [];
+        parts.forEach((part, index) => {
+          newTokens.push({ type: 'text', extText: part });
+          if (index < parts.length - 1) {
+            newTokens.push({ type: 'formula', extText: formulaText });
+          }
+        });
+        return newTokens;
+      });
+    }
+
+    if (text.includes(formulaDiemTongHop)) {
+      tokens = tokens.flatMap(el => {
+        if (el.type !== 'text') return el;
+        const parts = el.extText.split(formulaDiemTongHop);
+        const newTokens: Token[] = [];
+        parts.forEach((part, index) => {
+          newTokens.push({ type: 'text', extText: part });
+          if (index < parts.length - 1) {
+            newTokens.push({ type: 'formula_diem_tong_hop', extText: formulaDiemTongHop });
+          }
+        });
+        return newTokens;
+      });
+    }
+
+    if (text.includes(formulaDiemGia)) {
+      tokens = tokens.flatMap(el => {
+        if (el.type !== 'text') return el;
+        const parts = el.extText.split(formulaDiemGia);
+        const newTokens: Token[] = [];
+        parts.forEach((part, index) => {
+          newTokens.push({ type: 'text', extText: part });
+          if (index < parts.length - 1) {
+            newTokens.push({ type: 'formula_diem_gia', extText: formulaDiemGia });
+          }
+        });
+        return newTokens;
+      });
+    }
+
+    const varsRegex = /(Điểm kỹ thuật|G|Điểm giá|Điểm tổng hợp)_(đang xét|cao nhất|thấp nhất)/ig;
+    tokens = tokens.flatMap(el => {
+      if (el.type !== 'text') return el;
+      const parts = el.extText.split(varsRegex);
+      if (parts.length === 1) return [el];
+      const newTokens: Token[] = [];
+      newTokens.push({ type: 'text', extText: parts[0] });
+      for (let i = 1; i < parts.length; i += 3) {
+        newTokens.push({ type: 'var_subscript', extText: '', prefix: parts[i], sub: parts[i+1] });
+        newTokens.push({ type: 'text', extText: parts[i+2] });
+      }
+      return newTokens;
+    });
 
     artNotes.forEach(note => {
        if (!note.text.trim()) return;
@@ -214,6 +277,59 @@ function DocumentPane({
            }
            if (el.type === 'search') {
               return <mark key={i} className="bg-amber-400/40 text-ink-900 border-b-2 border-amber-500 px-0.5 rounded-sm font-black shadow-[0_0_15px_rgba(251,191,36,0.3)]">{el.extText}</mark>;
+           }
+           if (el.type === 'formula') {
+              return (
+                <span key={i} className="inline-flex items-center justify-center w-full gap-2 my-4 text-[15px] xl:text-[16px]">
+                  <span>Tỷ lệ sở hữu vốn = </span>
+                  <span className="flex flex-col items-center">
+                    <span className="text-[11px] leading-none text-ink-800 mb-0.5">n</span>
+                    <span className="text-[32px] leading-[0.8] font-serif font-light text-ink-900">∑</span>
+                    <span className="text-[11px] leading-none text-ink-800 mt-2">i=1</span>
+                  </span>
+                  <span className="ml-1">X<sub className="text-[10px]">i</sub> x Y<sub className="text-[10px]">i</sub></span>
+                </span>
+              );
+           }
+           if (el.type === 'var_subscript') {
+               return <span key={i}>{el.prefix}<sub className="text-[10px] bottom-0">{el.sub}</sub></span>;
+           }
+           if (el.type === 'formula_diem_tong_hop') {
+              return (
+                <span key={i} className="flex flex-wrap items-center justify-center w-full gap-2 my-4 text-[14px] xl:text-[15px] overflow-x-auto whitespace-nowrap">
+                  <span>Điểm tổng hợp<sub className="text-[9px] bottom-0">đang xét</sub> = </span>
+                  <span className="text-[40px] leading-[0] font-thin mt-[-4px] text-ink-700">(</span>
+                  
+                  <span className="flex flex-col items-center justify-center mx-1">
+                    <span className="border-b border-ink-900 px-2 pb-0.5 mb-0.5">G<sub className="text-[9px] bottom-0">thấp nhất</sub></span>
+                    <span className="px-2 pt-0.5">G<sub className="text-[9px] bottom-0">đang xét</sub></span>
+                  </span>
+                  
+                  <span> x T + </span>
+                  
+                  <span className="flex flex-col items-center justify-center mx-1">
+                    <span className="border-b border-ink-900 px-4 pb-0.5 mb-0.5">Điểm kỹ thuật<sub className="text-[9px] bottom-0">đang xét</sub></span>
+                    <span className="px-4 pt-0.5">Điểm kỹ thuật<sub className="text-[9px] bottom-0">cao nhất</sub></span>
+                  </span>
+                  
+                  <span> x K </span>
+                  <span className="text-[40px] leading-[0] font-thin mt-[-4px] text-ink-700">)</span>
+                  <span> x 100</span>
+                </span>
+              );
+           }
+           if (el.type === 'formula_diem_gia') {
+              return (
+                <span key={i} className="flex flex-wrap items-center justify-center w-full gap-2 my-4 text-[14px] xl:text-[15px] overflow-x-auto whitespace-nowrap">
+                  <span>Điểm giá<sub className="text-[9px] bottom-0">đang xét</sub> = </span>
+                  <span className="flex flex-col items-center justify-center mx-1">
+                    <span className="border-b border-ink-900 px-4 pb-0.5 mb-0.5">
+                      G<sub className="text-[9px] bottom-0">thấp nhất</sub> <span className="text-[17px] leading-none mb-[-2px] inline-block">&times;</span> (thang điểm kỹ thuật)
+                    </span>
+                    <span className="px-4 pt-0.5">G<sub className="text-[9px] bottom-0">đang xét</sub></span>
+                  </span>
+                </span>
+              );
            }
            return <span key={i}>{el.extText}</span>;
         })}
@@ -2405,7 +2521,7 @@ export default function App() {
                   </a>
 
                   <a 
-                    href="https://notebooklm.google.com/notebook/79d26a87-0bfa-4ee1-9f69-467065085ae5"
+                    href="https://notebooklm.google.com/notebook/79d26a87-0bfa-4ee1-9f69-467065085ae5/preview"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-col items-center justify-center gap-1 w-full py-3 px-4 bg-[#0f172a] text-white rounded-xl hover:bg-[#1e293b] transition-all shadow-md group border border-slate-700"

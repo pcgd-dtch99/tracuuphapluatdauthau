@@ -103,7 +103,9 @@ h) Tư vấn giám sát.
 6\. Tỷ lệ cổ phần, vốn góp giữa các bên được xác định tại thời điểm đóng thầu và theo tỷ lệ ghi trong giấy chứng nhận đăng ký doanh nghiệp, quyết định thành lập, các giấy tờ khác có giá trị tương đương.
 
 7\. Trường hợp nhà thầu tham dự thầu với tư cách liên danh hoặc nhà thầu tư vấn được lựa chọn với tư cách liên danh, tỷ lệ sở hữu vốn của tổ chức, cá nhân khác trong liên danh được xác định theo công thức sau:
-
+                     n
+Tỷ lệ sở hữu vốn =   ∑  Xi x Yi
+                    i=1
 Trong đó:
 
 Xi: Là tỷ lệ sở hữu vốn của tổ chức, cá nhân khác trong thành viên liên danh thứ i;
@@ -1284,9 +1286,9 @@ d) Tiêu chuẩn xác định giá đánh giá (đối với trường hợp áp
 
 Điểm tổng hợp được xác định như sau:
 
-Trong đó:
+{{FORMULA_DIEM_TONG_HOP}}
 
-Điểm tổng hợp_đang xét = [(G_thấp nhất/G_đang xét)xT + (Điểm kỹ thuật_đang xét/Điểm kỹ thuật_cao nhất)xK] x 100
+Trong đó:
 
 Điểm kỹ thuật_đang xét: là số điểm được xác định tại bước đánh giá về kỹ thuật của hồ sơ dự thầu đang xét;
 
@@ -1860,7 +1862,7 @@ a) Xác định điểm giá:
 
 Sử dụng thang điểm thống nhất với thang điểm về kỹ thuật để xác định điểm giá. Điểm giá được xác định như sau:
 
-Điểm giá_đang xét = [G_thấp nhất x (thang điểm kỹ thuật)]/G_đang xét
+{{FORMULA_DIEM_GIA}}
 
 Trong đó:
 
