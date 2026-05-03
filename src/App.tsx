@@ -2521,7 +2521,7 @@ export default function App() {
                   </a>
 
                   <a 
-                    href="https://notebooklm.google.com/notebook/79d26a87-0bfa-4ee1-9f69-467065085ae5/preview"
+                    href="https://notebooklm.google.com/notebook/79d26a87-0bfa-4ee1-9f69-467065085ae5"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-col items-center justify-center gap-1 w-full py-3 px-4 bg-[#0f172a] text-white rounded-xl hover:bg-[#1e293b] transition-all shadow-md group border border-slate-700"
