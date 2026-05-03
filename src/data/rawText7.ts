@@ -32,7 +32,9 @@ b) Quyết định giao đơn vị có nhân sự đáp ứng yêu cầu thực 
 
 c) Phê duyệt hồ sơ mời quan tâm; phê duyệt hồ sơ mời thầu hoặc ủy quyền phê duyệt hồ sơ mời thầu;
 
-d) Phê duyệt kết quả mời quan tâm, kết quả lựa chọn nhà đầu tư; đ) Quyết định xử lý tình huống trong đấu thầu;
+d) Phê duyệt kết quả mời quan tâm, kết quả lựa chọn nhà đầu tư; 
+
+đ) Quyết định xử lý tình huống trong đấu thầu;
 
 e) Ký kết hợp đồng trên cơ sở chấp thuận của cơ quan có thẩm quyền; tổ chức quản lý hợp đồng với nhà đầu tư được lựa chọn;
 
@@ -136,7 +138,7 @@ l) Chịu trách nhiệm trước pháp luật và người có thẩm quyền t
 
 1. Lập hồ sơ mời quan tâm, hồ sơ mời sơ tuyển, hồ sơ mời thầu, hồ sơ yêu cầu.
 
-2. Đánh giá hồ sơ quan tâm, hồ sơ dự sơ tuyển, hồ sơ đăng ký thực hiện dự án đầu tư kinh doanh, hồ sơ dự thầu, hồ sơ đề xuất; đề xuất với chủ đầu tư, bên mời thầu154 phương án xử lý tình huống trong trường hợp phát sinh tình huống trong đấu thầu (nếu có).
+2. Đánh giá hồ sơ quan tâm, hồ sơ dự sơ tuyển, hồ sơ đăng ký thực hiện dự án đầu tư kinh doanh, hồ sơ dự thầu, hồ sơ đề xuất; đề xuất với chủ đầu tư, bên mời thầu phương án xử lý tình huống trong trường hợp phát sinh tình huống trong đấu thầu (nếu có).
 
 2a. Trình duyệt hồ sơ mời sơ tuyển, hồ sơ mời quan tâm, hồ sơ yêu cầu, hồ sơ mời thầu, kết quả lựa chọn danh sách ngắn, kết quả lựa chọn nhà thầu.
 
@@ -335,4 +337,4 @@ b) Đối với lựa chọn nhà đầu tư, người quyết định xử lý 
 3. Trong thời gian kể từ ngày 01 tháng 01 năm 2024 đến ngày Luật Đất đai sửa đổi có hiệu lực thi hành, việc lựa chọn nhà đầu tư thực hiện dự án đầu tư có sử dụng đất được tiếp tục thực hiện theo quy định của Luật Đấu thầu số 43/2013/QH13 và các văn bản quy định chi tiết, hướng dẫn thi hành.
 
 4. Hợp đồng mà nhà thầu trúng thầu vật tư, hóa chất có trách nhiệm cung cấp trang thiết bị y tế để sử dụng vật tư, hóa chất đó được ký kết trước ngày Luật này có hiệu lực thi hành được tiếp tục thực hiện trong thời hạn quy định tại hợp đồng nhưng không quá 05 năm kể từ ngày Luật này có hiệu lực thi hành.
-\``;
+`;

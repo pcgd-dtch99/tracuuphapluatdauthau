@@ -122,7 +122,7 @@ d) Tài liệu khác (nếu có).
 
 1. Sửa đổi, bổ sung Điều 4 như sau:
 
-“**Điều 4. Mức thu các loại chi phí**
+“Điều 4. Mức thu các loại chi phí
 
 1. Chi phí duy trì tên và hồ sơ năng lực của nhà thầu trên Hệ thống thực hiện theo quy định tại điểm a khoản 9 Điều 14 của Nghị định số 214/2025/NĐ-CP.
 
@@ -164,7 +164,7 @@ b) Hủy thông báo mời quan tâm, thông báo mời sơ tuyển, thông báo
 
 3. Các gói thầu đã phát hành hồ sơ mời quan tâm, hồ sơ mời sơ tuyển, hồ sơ mời thầu, E-HSMQT, E-HSMST, E-HSMT từ ngày 01 tháng 7 năm 2025 trở đi và trước ngày Thông tư này có hiệu lực thi hành, việc lựa chọn danh sách ngắn, lựa chọn nhà thầu, ký kết và quản lý thực hiện hợp đồng thực hiện theo quy định của Luật Đấu thầu số 22/2023/QH15 đã được sửa đổi, bổ sung một số điều theo Luật số 57/2024/QH15, Luật số 90/2025/QH15 (sau đây gọi là Luật Đấu thầu sửa đổi năm 2025), các nội dung của Nghị định số 24/2024/NĐ-CP (được sửa đổi, bổ sung tại Nghị định số 17/2025/NĐ-CP), các văn bản hướng dẫn còn phù hợp với quy định của Luật Đấu thầu sửa đổi năm 2025.
 
-4. Trường hợp thay đổi hình thức lựa chọn nhà thầu từ không qua mạng thành qua mạng thì chủ đầu tư không phải phê duyệt điều chỉnh kế hoạch lựa chọn nhà thầu mà tiến hành chỉnh sửa hình thức lựa chọn nhà thầu trên Hệ thống từ không qua mạng thành qua mạng. Quy trình chỉnh sửa thực hiện theo _Hướng dẫn sử dụng_.
+4. Trường hợp thay đổi hình thức lựa chọn nhà thầu từ không qua mạng thành qua mạng thì chủ đầu tư không phải phê duyệt điều chỉnh kế hoạch lựa chọn nhà thầu mà tiến hành chỉnh sửa hình thức lựa chọn nhà thầu trên Hệ thống từ không qua mạng thành qua mạng. Quy trình chỉnh sửa thực hiện theo Hướng dẫn sử dụng.
 
 ## Điều 35. Hiệu lực thi hành
 

@@ -151,4 +151,4 @@ d) Mục tiêu cụ thể của hoạt động đấu thầu;
 4. Việc phê duyệt kế hoạch lựa chọn nhà thầu phải căn cứ theo tính chất kỹ thuật, trình tự thực hiện; bảo đảm tính đồng bộ của dự án, dự toán mua sắm và phù hợp với kế hoạch tổng thể lựa chọn nhà thầu được duyệt (nếu có).
 
 5. Kế hoạch lựa chọn nhà thầu được lập sau khi có dự toán mua sắm, quyết định phê duyệt dự án hoặc đồng thời với quá trình lập dự án, dự toán mua sắm hoặc trước khi có quyết định phê duyệt dự án đối với gói thầu cần thực hiện trước khi có quyết định phê duyệt dự án.
-\``;
+`;

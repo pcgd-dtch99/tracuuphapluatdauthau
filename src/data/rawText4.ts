@@ -173,4 +173,4 @@ e) Hoàn thiện, ký kết và quản lý thực hiện hợp đồng.
 Đối với hình thức chỉ định thầu, trong quá trình thương thảo, hoàn thiện hợp đồng, chủ đầu tư và nhà thầu thương thảo về giá bảo đảm giá đề nghị trúng thầu tiết kiệm, hiệu quả kinh tế.
 
 2. Chính phủ quy định chi tiết Điều này.
-\``;
+`;

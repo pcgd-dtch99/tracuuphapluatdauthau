@@ -265,4 +265,4 @@ a) Việc chuyển nhượng phải được người có thẩm quyền chấp 
 b) (được bãi bỏ)
 
 c) Nhà đầu tư nhận chuyển nhượng cam kết kế thừa toàn bộ các quyền, nghĩa vụ của bên chuyển nhượng theo quy định tại hợp đồng dự án đầu tư kinh doanh.
-\``;
+`;
